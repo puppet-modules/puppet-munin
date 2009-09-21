@@ -5,6 +5,7 @@
 log_level 4
 log_file /var/log/munin/munin-node.log
 pid_file /var/run/munin/munin-node.pid
+
 background 1
 setseid 1
 
@@ -22,6 +23,7 @@ ignore_file \.bak$
 ignore_file %$
 ignore_file \.dpkg-(tmp|new|old|dist)$
 ignore_file \.rpm(save|new)$
+ignore_file \.pod$
 
 # Set this if the client doesn't report the correct hostname when
 # telnetting to localhost, port 4949
