@@ -70,14 +70,14 @@ class munin::plugins::base {
 
 	file {
 		[ "/etc/munin/plugins", "/etc/munin/plugin-conf.d" ]:
-			source => "puppet://$servername/common/empty",
+			source => "puppet:///common/empty",
 			ensure => directory, checksum => mtime,
 			ignore => '.ignore',
 			recurse => true, purge => true, force => true, 
 			mode => 0755, owner => root, group => root,
 			notify => Service[munin-node];
 		"/etc/munin/plugin-conf.d/munin-node":
-			ensure => present, 
+			source => "puppet:///munin/munin-node.${lsbdistcodename}",
 			mode => 0644, owner => root, group => root,
 			notify => Service[munin-node],
 			before => Package[munin-node];
