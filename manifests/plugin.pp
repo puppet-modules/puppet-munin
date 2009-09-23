@@ -77,7 +77,7 @@ class munin::plugins::base {
 			mode => 0755, owner => root, group => root,
 			notify => Service[munin-node];
 		"/etc/munin/plugin-conf.d/munin-node":
-			source => "puppet:///munin/munin-node.${lsbdistcodename}",
+			source => [ "puppet:///munin/munin-node.${lsbdistcodename}", "puppet:///munin/munin-node" ],
 			mode => 0644, owner => root, group => root,
 			notify => Service[munin-node],
 			before => Package[munin-node];
