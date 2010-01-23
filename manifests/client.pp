@@ -3,6 +3,8 @@
 # See LICENSE for the full license granted to you.
 
 class munin::client {
+	module_dir { [ "munin", "munin/plugins" ]: }
+
 
 	$munin_port_real = $munin_port ? { '' => 4949, default => $munin_port } 
 	$munin_host_real = $munin_host ? {

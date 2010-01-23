@@ -5,9 +5,7 @@
 # the port is a parameter so vservers can share IP addresses and still be happy
 
 # Define where the individual nodes' configs are stored
-$NODESDIR="${module_dir_path}/munin/nodes"
-
-module_dir { [ "munin", "munin/nodes", "munin/plugins" ]: }
+$NODESDIR="/var/lib/puppet/modules/munin/nodes"
 
 import "host.pp"
 import "client.pp"

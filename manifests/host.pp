@@ -4,6 +4,10 @@
 
 class munin::host
 {
+	include munin::client
+
+	module_dir { [ "munin/nodes" ]: }
+
 	package { [ "munin", "nmap"]: ensure => installed, }
 
 	File <<| tag == 'munin' |>>
