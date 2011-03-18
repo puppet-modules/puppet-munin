@@ -127,3 +127,13 @@ class munin::plugins::vserver inherits munin::plugins::base {
 	}
 
 }
+
+class munin::plugins::openvz inherits munin::plugins::vserver {
+
+	plugin {
+		[ df, df_inode, fw_packets, load, memory, threads, uptime, cpu, users, vmstat ]:
+			ensure => present;
+	}
+
+	include munin::plugins::interfaces
+}
