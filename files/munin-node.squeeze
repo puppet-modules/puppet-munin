@@ -89,3 +89,6 @@ env.days 1 7 30
 user root
 # do not exclude "simfs" (OpenVZ)
 env.exclude none unknown iso9660 squashfs udf romfs ramfs debugfs
+
+[munin_stats]
+user munin
