@@ -14,7 +14,6 @@ host <%= munin_host_real %>
 port <%= munin_port_real %>
 user root
 group root
-setsid yes
 
 # Regexps for files to ignore
 

@@ -56,7 +56,7 @@ user root
 env.mysqlopts --defaults-extra-file=/etc/mysql/debian.cnf
 
 [postfix_mailqueue]
-user (postfix)
+user postfix
 
 [postfix_mailstats]
 group adm

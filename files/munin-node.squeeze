@@ -64,7 +64,7 @@ env.mysqlopts --defaults-file=/etc/mysql/debian.cnf
 
 
 [postfix_mailqueue]
-user (postfix)
+user postfix
 
 [postfix_mailstats]
 group adm
@@ -83,3 +83,12 @@ user root
 user ejabberd
 env.statuses available away chat xa
 env.days 1 7 30
+
+# required for mounts in /root ("df: `/root/.dotfiles': Permission denied")
+[df*]
+user root
+# do not exclude "simfs" (OpenVZ)
+env.exclude none unknown iso9660 squashfs udf romfs ramfs debugfs
+
+[munin_stats]
+user munin
